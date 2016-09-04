@@ -25,6 +25,10 @@ function checkProgress() {
         $("#ms-card").toggleClass("card-success-outline");
         $("#ms-title").append('<span class="green"> &#10004; </span>')
     }
+
+    if(pDone && seDone && bsDone && msDone){
+      $("#completed").append("<div class='card card-block no-border'> <a id='p-button' class='btn btn-primary btn-lg btn-block' href='/completion' role='button'> Collect your certificate of completion! </a> </div>")
+    }
 }
 
 function checkQuestion1() {

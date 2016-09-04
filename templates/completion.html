@@ -1,0 +1,58 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> Completion </title>
+
+    <link type="text/css" rel="stylesheet" href="static/css/csam.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <link rel="apple-touch-icon" sizes="76x76" href="static/images/favicons/apple-touch-icon-76x76.png">
+    <link rel="icon" type="image/png" href="static/images/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="shortcut icon" href="static/images/favicons/favicon.ico">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<div class="container">
+  <div style="position: relative;">
+    <img src="static/images/certificate.jpg" height="720" width="960">
+    <div id="name" style="position: absolute;top: 290px;left: 205px;width: 100%;">
+    </div>
+    <div id="for" style="position: absolute;top: 390px;left: 205px;width: 100%;">
+      <h2>Completion of CSAM</h2>
+    </div>
+    <div id="date" style="position: absolute;top: 500px;left: 205px;width: 100%;">
+    </div>
+    <div id="signed" style="position: absolute;top: 500px;left: 620px;width: 100%;">
+      <h2>CSAM</h2>
+    </div>
+
+  </div>
+  <div style="float:right;">
+    <div style="float:right;">
+      <a href=" {{ url_for('index') }}"><button class="btn btn-info">Done</button></a>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  var input = prompt("Please enter your name");
+  while(!input){
+    input = prompt("Please enter your name");
+  }
+  var name_div = document.getElementById('name');
+  name_div.innerHTML = name_div.innerHTML + '<h2>' + input + '</h2>';
+  var date_div = document.getElementById('date');
+  var d = new Date()
+  date.innerHTML = date.innerHTML + '<h2>' + (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear() + '</h2>';
+</script>

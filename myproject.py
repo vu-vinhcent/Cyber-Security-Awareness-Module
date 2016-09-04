@@ -80,5 +80,9 @@ def mobile_quiz():
 def browser_quiz():
     return render_template('browser-quiz.html')
 
+@application.route("/completion")
+def completion():
+        return render_template("completion.html")
+
 if __name__ == "__main__":
     application.run(host='0.0.0.0', debug=True)
