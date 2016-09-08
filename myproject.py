@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, Response
+from flask import Flask, render_template, request, Response, make_response
 from bs4 import BeautifulSoup
 import requests
 import json
+import pdfkit
 
 PLACES = [
         {'state' : 'Alabama', 'city' :'Phenix-City'},
@@ -82,7 +83,12 @@ def browser_quiz():
 
 @application.route("/completion")
 def completion():
-        return render_template("completion.html")
+    rendered = render_template("completion.html")
+    pdf = pdfkit.from_string(rendered, False)
+    response = make_response(pdf)
+    response.headers['Content-Type'] = 'application/pdf'
+    response.headers['Content-Disposition'] = 'attachment;filename=output.pdf'
+    return response
 
 if __name__ == "__main__":
     application.run(host='0.0.0.0', debug=True)

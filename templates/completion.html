@@ -22,37 +22,25 @@
     <![endif]-->
 </head>
 
-<div class="container">
-  <div style="position: relative;">
-    <img src="static/images/certificate.jpg" height="720" width="960">
-    <div id="name" style="position: absolute;top: 310px;left: 205px;width: 100%;">
-    </div>
-    <div id="for" style="position: absolute;top: 405px;left: 205px;width: 100%;">
-      <h2>Completion of CSAM</h2>
-    </div>
-    <div id="date" style="position: absolute;top: 510px;left: 205px;width: 100%;">
-    </div>
-    <div id="signed" style="position: absolute;top: 510px;left: 620px;width: 100%;">
-      <h2>CSAM</h2>
-    </div>
 
-  </div>
-  <div style="float:right;">
-    <div style="float:right;">
-      <a href=" {{ url_for('index') }}"><button class="btn btn-info">Done</button></a>
-    </div>
-  </div>
+
+
+<div style="width:800px; height:px; padding:20px; text-align:center; border: 10px solid #787878">
+   <div style="width:750px; height:650px; padding:20px; text-align:center; border: 5px solid #787878">
+      <span style="font-size:50px; font-weight:bold">Certificate of Completion</span>
+      <br><br>
+      <span style="font-size:25px"><i>This is to certify that</i></span>
+      <br><br>
+      <span style="font-size:30px"><b>{{name}}</b></span><br/><br/>
+      <span style="font-size:25px"><i>has completed the </i></span> <br/><br/>
+      <span style="font-size:30px">Cyber Security Awareness Module</span> <br/><br/>
+      <span style="font-size:25px"><i>dated</i></span><br>
+      <span style="font-size:30px">{{date}}</span>
+   </div>
 </div>
 
 
+
 <script>
-  var input = prompt("Please enter your name");
-  while(!input){
-    input = prompt("Please enter your name");
-  }
-  var name_div = document.getElementById('name');
-  name_div.innerHTML = name_div.innerHTML + '<h2>' + input + '</h2>';
-  var date_div = document.getElementById('date');
-  var d = new Date()
-  date.innerHTML = date.innerHTML + '<h2>' + (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear() + '</h2>';
+
 </script>
