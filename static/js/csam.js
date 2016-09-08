@@ -27,7 +27,7 @@ function checkProgress() {
     }
 
     if (pDone && seDone && bsDone && msDone) {
-        $("#completed").append("<div class='card card-block no-border'> <a id='p-button' class='btn btn-primary btn-lg btn-block' href='/completion' role='button'> Collect your certificate of completion! </a> </div>")
+        $("#completed").append("<div class='card card-block no-border'> <a id='p-button' class='btn btn-primary btn-lg btn-block' href='/get_info' role='button'> Collect your certificate of completion! </a> </div>")
     }
 }
 
