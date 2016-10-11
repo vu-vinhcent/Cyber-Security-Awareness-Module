@@ -36,6 +36,7 @@
                 <a class="nav-item nav-link" href="{{ url_for('social_eng') }}"> Social Engineering </a>
                 <a class="nav-item nav-link active" href="{{ url_for('browser') }}"> Browser Security </a>
                 <a class="nav-item nav-link" href="{{ url_for('mobile') }}"> Mobile Security </a>
+                <a class="nav-item nav-link" href="{{ url_for('malware') }}"> Malware </a>
             </div>
         </nav>
     </header>
@@ -52,7 +53,7 @@
 
     <div id="main" class="container-fluid hidden-sm-down">
         <div class="row">
-            <div class="jumbotron jumbotron-fluid col-md-12">
+            <div class="jumbotron jumbotron-fluid col-md-12 p-a-2">
                 <div class="container">
                     <h1 class="display-3"> Browser Security </h1>
                     <!--<h4 class="lead"> Introduction or description of the module for people to read before they actually do it. </h4> </div>-->
@@ -79,7 +80,7 @@
                     </div>
 
                     <div id="content" class="col-md-10">
-                        <p class="card card-block card-instruction"> Instructions will look like this. </p>
+
 
                         <div class="card card-block">
                             <h3 id="cookies" class="card-title"> Cookies </h3>
@@ -99,16 +100,43 @@
                                 <li> Cookies can store saved passwords, track your browsing patterns. </li>
                             </ul>
                             <h5> What do cookies do? </h5>
+
                             <ul>
                                 <li> Have you ever noticed ads shown on your Facebook page consistently match your recent Google searches or purchases from Amazon? </li>
                                 <li> Cookies can be used to track what you buy or search in order to customize your advertising, in the hopes that you buy similar products. </li>
-                                <li> They can also store information, such Amazon using cookies to store products that you've shown interest into a "shopping cart." </li>
+                                <li> They can also store information, such as Amazon using cookies to store products that you've shown interest into a "shopping cart." </li>
                             </ul>
+                            <img src="static/images/cookiepicture.png">
                             <h5> How can you protect yourself? </h5>
                             <ul>
                                 <li> You can configure your browser settings to allow cookies only from sites you trust and disable from sites you don't. </li>
                             </ul>
                         </div>
+
+
+                        <p class="card card-block card-instruction">Select your favorite browser, then click on the images below to go through the steps of managing cookies.</p>
+
+                        <div class="card text-xs-center">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item"> <a style="background-color:#abb1b6" class="nav-link active" data-toggle="tab" href="#chrome-cookies" role="tab">Chrome</a> </li>
+                                <li class="nav-item"> <a style="background-color:#BFBFBF" class="nav-link" data-toggle="tab" href="#firefox-cookies" role="tab">Firefox</a> </li>
+                                <li class="nav-item"> <a style="background-color:#d6dee4" class="nav-link" data-toggle="tab" href="#ie-cookies" role="tab">Internet Explorer</a> </li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="chrome-cookies" role="tabpanel">
+                                    <img class="p-x-1" id="chrome-cookies-img" src="static/images/cookies-chrome/step1.png" onclick="changeSrc(this)">
+                                </div>
+                                <div class="tab-pane" id="firefox-cookies" role="tabpanel">
+                                    <img class="p-x-1" id="firefox-cookies-img" src="static/images/cookies-firefox/step1.png" onclick="changeSrc(this)">
+                                </div>
+                                <div class="tab-pane" id="ie-cookies" role="tabpanel">
+                                    <img class="p-x-1" id="ie-cookies-img" src="static/images/cookies-ie/step1.png" onclick="changeSrc(this)">
+                                </div>
+                            </div>
+                        </div>
+
+
                         <div class="card card-block">
                             <h4 id="plugins" class="card-title"> Plug-Ins </h4>
                             <hr>
@@ -120,7 +148,7 @@
                             </ul>
                             <h5> How can you protect yourself? </h5>
                             <ul>
-                                <li> Only install plug-ins from official sources, such as the Chrome Web Store or Firefox Addons. </li>
+                                <li> Only install plug-ins from official sources, such as the Chrome Web Store or Firefox Add-ons. </li>
                                 <li> Be aware that while plug-ins from official sources are safer than third-party installations, they are not completely safe. </li>
                                 <li> Never install an unknown plug-in. </li>
                             </ul>
@@ -194,12 +222,12 @@
                                 <li> HTTPS is a secure version of HTTP that encrypts data, providing protection from eavesdropping and tampering. </li>
                                 <li> When using a non-secure connection such as HTTP, data is sent over the network in clear text. This means that anyone on the network can view the data being sent and received. </li>
                                 <li> It is important to make sure that your connection is encrypted when entering sensitive information into a website, otherwise anyone can view this information as it travels over the network.</li>
-                                <li> Always make sure you are using a secure connection when shopping online. </li>
+                                <li> Always make sure you are using a secure connection when sending out sensitive information such as shopping online, connecting to your personal accounts including bank accounts, email accounts, and social media accounts. </li>
                                 <li> You can tell that you are using a secured connection by the &quot;https:// &quot; prefix of your URL, or by the padlock icon. The padlock icon may vary by browser, but an example is shown below.</li>
                             </ul>
                             <img style="margin: auto;display: block;" src="/static/images/https.png">
                         </div>
-                        <div class="card card-block no-border"> <a id="p-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('browser_quiz') }}" role="button"> Take the quiz! </a> </div>
+                        <div class="card card-block no-border"> <a id="bs-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('browser_quiz') }}" role="button"> Take the quiz! </a> </div>
                     </div>
                 </div>
             </div>

@@ -35,6 +35,7 @@
                 <a class="nav-item nav-link" href="{{ url_for('social_eng') }}"> Social Engineering </a>
                 <a class="nav-item nav-link" href="{{ url_for('browser') }}"> Browser Security </a>
                 <a class="nav-item nav-link active" href="{{ url_for('mobile') }}"> Mobile Security </a>
+                <a class="nav-item nav-link" href="{{ url_for('malware') }}"> Malware </a>
             </div>
         </nav>
     </header>
@@ -51,7 +52,7 @@
 
     <div id="main" class="container-fluid hidden-sm-down">
         <div class="row">
-            <div class="jumbotron jumbotron-fluid col-md-12">
+            <div class="jumbotron jumbotron-fluid col-md-12 p-a-2">
                 <div class="container">
                     <h1 class="display-3"> Mobile Security </h1>
                     <!--<h4 class="lead"> Introduction or description of the module for people to read before they actually do it. </h4> -->
@@ -76,7 +77,6 @@
                         </div>
                     </div>
                     <div id="content" class="col-md-10">
-                        <p class="card card-block card-instruction"> Instructions will look like this. </p>
 
                         <div id="thirdparty" class="card card-block">
                             <h4 class="card-title"> Third-Party Apps </h4>
@@ -98,7 +98,7 @@
                                 <div class="col-md-7 col-lg-8 col-xl-9 p-t-3">
                                     <p> Curious, Jack opened it up. His phone froze immediately, and Jack was forced to shut his phone off by removing the battery. </p>
 
-                                    <p> The app was nowhere to be found, but nows ads pop up all the time. </p>
+                                    <p> The app was nowhere to be found, but now ads pop up all the time. </p>
                                 </div>
                                 <div class="col-md-5 col-lg-4 col-xl-3">
                                     <image class="m-x-auto d-block" src="static/images/badpoke.jpg"></image>
@@ -128,7 +128,7 @@
 
                             <div class="row p-t-2">
                                 <div class="col-md-12 col-lg-12 col-xl-5">
-                                    <p> When you install some apps, they ask for your permission to access your datas. These permissions can include anything from your location data to accessing your contacts. Some apps can even send text messages and calls.
+                                    <p> When you install some apps, they ask for your permission to access your data. These permissions can include anything from your location data to accessing your contacts. Some apps can even send text messages and calls.
                                     </p>
                                 </div>
                                 <div class="col-md-12 col-lg-12 col-xl-7">
@@ -167,7 +167,7 @@
                         </div>
 
                         <div class="card card-block no-border">
-                            <a id="p-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('mobile_quiz') }}" role="button"> Take the quiz! </a>
+                            <a id="mos-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('mobile_quiz') }}" role="button"> Take the quiz! </a>
                         </div>
                     </div>
                 </div>

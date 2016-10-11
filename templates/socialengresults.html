@@ -21,6 +21,68 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+    .red-flag{
+      border-style: solid;
+      border-width: 1px;
+      border-color:red;
+    }
+    /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 70px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: white;
+    color: white;
+    height:7%;
+}
+    </style>
+
 </head>
 
 <body data-spy="scroll" data-target="#sidebar">
@@ -36,6 +98,7 @@
                 <a class="nav-item nav-link active" href="{{ url_for('social_eng') }}"> Social Engineering </a>
                 <a class="nav-item nav-link" href="{{ url_for('browser') }}"> Browser Security </a>
                 <a class="nav-item nav-link" href="{{ url_for('mobile') }}"> Mobile Security </a>
+                <a class="nav-item nav-link" href="{{ url_for('malware') }}"> Malware </a>
             </div>
         </nav>
     </header>
@@ -52,10 +115,11 @@
 
     <div id="main" class="container-fluid hidden-sm-down">
         <div class="row">
-            <div class="jumbotron jumbotron-fluid col-md-12">
+            <div class="jumbotron jumbotron-fluid col-md-12 p-a-2">
                 <div class="container">
                     <h1 class="display-3"> Social Engineering </h1>
                     <!--<h4 class="lead"> Introduction or description of the module for people to read before they actually do it. </h4> </div>-->
+                </div>
             </div>
         </div>
         <div class="row">
@@ -77,7 +141,7 @@
                         </div>
                     </div>
                     <div id="content" class="col-md-10">
-                        <p class="card card-block card-instruction"> Instructions will look like this. </p>
+
 
                         <div class="card card-block">
                             <h3 id="phishing" class="card-title"> Phishing and You </h3>
@@ -93,14 +157,14 @@
                             <div class="tab-content">
                                 <div class="tab-pane card-block light-bg active" id="level1" role="tabpanel">
                                     <p> To: a_student@columbusstate.edu
-                                        <br> From: "John Smith" &lt;john_smith@schoolfeepayment.xyz&gt;
-                                        <br> Subject: URGENT! Unbalanced account, dropped classes now if no REPLY
+                                        <br> From: "John Smith" <span class="red-flag-unmarked">&lt;john_smith@schoolfeepayment.xyz&gt;</span>
+                                        <br> Subject: <span class="red-flag-unmarked">URGENT! </span>Unbalanced account, dropped classes now if no REPLY
                                     </p>
                                     <p> Hello! </p>
-                                    <p> Your school account is nonbalanced. You will be dropped from all classes if administrative fee is not paid. Punishment fees may be charged to your account if you fail to pay in a timely manner. </p>
+                                    <p> Your school account is <span class="red-flag-unmarked">nonbalanced</span>. You will be dropped from all classes if administrative fee is not paid. Punishment fees may be charged to your account if you fail to pay in a timely manner. </p>
                                     <p> You owe: $12.56 administrator fee. </p>
-                                    <p> Please do the needful and pay your account <span class="fake-link">here</span> or at <span class="fake-link">schoolfeepayment.xyz</span> </p>
-                                    <p> Thx, Jon Smith</p>
+                                    <p> Please do the needful and pay your account <span class="fake-link red-flag-unmarked">here</span> or at <span class="fake-link">schoolfeepayment.xyz</span> </p>
+                                    <p> <span class="red-flag-unmarked">Thx</span>, Jon Smith</p>
 
                                 </div>
 
@@ -112,14 +176,14 @@
                                     <p> Hello, </p>
                                     <p> Or records show that you may be the victim of a computer virus or phishing scheme which has now taken control of your FAFSA Student Aid account. </p>
                                     <p> Your FAFSA account contains sensitive personal information including, but not limited to: </p>
-                                    <p> your social security #
+                                    <p> <span class="red-flag-unmarked">your social security #</span>
                                         <br> Your parents' social security numbers
-                                        <br> Financial information form tax returns.
+                                        <br> <span class="red-flag-unmarked">Financial information form tax returns.</span>
                                         <br> Your personal address.
-                                        <br> The schools you have attending
+                                        <br> <span class="red-flag-unmarked">The schools you have attending</span>
                                     </p>
 
-                                    <p> At U.S. Department of Education, we care deeply about your security and will NEVER ask you for personal information over email. Instead, please go to this site and login to begin the process of recovering your account: <span class="fake-link">Recover Your Account here</span> </p>
+                                    <p> At U.S. Department of Education, we care deeply about your security and will NEVER ask you for personal information over email. Instead, please go to this site and login to begin the process of recovering your account: <span class="fake-link red-flag-unmarked">Recover Your Account here</span> </p>
 
                                 </div>
                             </div>
@@ -157,8 +221,25 @@
                             </div>
 
                             <div class="form-check" style="text-align: center;">
-                                <button class="submit" onclick="checkQuestion1()"> Submit! </button>
+                                <button id="emailBtn" class="submit"> Submit! </button>
                             </div>
+
+
+                            <!-- The Modal -->
+                            <div id="emailModal" class="modal">
+                                <div class="modal-content">
+                                    <div id="email-modal-header" class="modal-header">
+                                        <h2 id="email-answer-result"></h2>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img id="email-modal-image" src="/static/images/email-result1.png">
+                                    </div>
+                                    <div id="email-modal-footer" class="modal-footer">
+                                        <button style="float: right;" onclick="emailResults()" id="email-modal-button"> Go to email 2</button>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div id="email-results"></div>
                         </div>
 
@@ -174,61 +255,103 @@
                                 <li> Grammar mistakes</li>
                             </ul>
                         </div>
+
                         <div class="card card-block">
                             <h5 id="fakesites"> Fake Websites </h5>
                             <p> Phishing emails can take you to fake websites that are designed to look like legitimate websites. </p>
-                            <p class="card card-block card-instruction"> Click on the tabs below to switch between two websites. Which one is real? </p>
 
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item"> <a class="nav-link light-bg active" data-toggle="tab" href="#web1" role="tab">Website 1</a> </li>
-                                <li class="nav-item"> <a class="nav-link lighter-bg" data-toggle="tab" href="#web2" role="tab">Website 2</a> </li>
-                            </ul>
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div class="tab-pane card-block light-bg active" id="web1" role="tabpanel">
-                                    <img id="fake-website-image-1" style="max-width: 100%" src="static/images/image1.jpg">
+                            <div id="fake-web-exer">
+
+                                <p class="card card-block card-instruction"> Click on the tabs below to switch between two websites. Which one is legitimate? </p>
+
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item"> <a class="nav-link light-bg active" data-toggle="tab" href="#web1" role="tab">Website 1</a> </li>
+                                    <li class="nav-item"> <a class="nav-link lighter-bg" data-toggle="tab" href="#web2" role="tab">Website 2</a> </li>
+                                </ul>
+
+                                <div class="tab-content m-b-1">
+                                    <div class="tab-pane card-block light-bg active" id="web1" role="tabpanel">
+                                        <img id="fake-website-image-1" style="max-width: 100%" src="static/images/image1.jpg">
+                                    </div>
+
+                                    <div class="tab-pane card-block lighter-bg" id="web2" role="tabpanel">
+                                        <img id="fake-website-image-2" style="max-width: 100%" src="static/images/image2.jpg">
+                                    </div>
                                 </div>
 
-                                <div class="tab-pane card-block lighter-bg" id="web2" role="tabpanel">
-                                    <img id="fake-website-image-2" style="max-width: 100%" src="static/images/image2.jpg">
+                                <div id="question2">
+                                    <div id='q2-check' class="question-space"> &nbsp; </div>
+
+                                    <h5> 1. Which of these websites is legitimate? </h5>
+
+                                    <div class="form-check indent">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="question2" id="q2a1" value="true"> Website 1
+                                        </label>
+
+                                        <br>
+
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="question2" id="q2a2" value="false"> Website 2
+                                        </label>
+
+                                        <br>
+
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="question2" id="q2a3" value="false"> Both
+                                        </label>
+
+                                        <br>
+
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="question2" id="q2a4" value="false"> None
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-check" style="text-align: center;">
+                                    <button class="submit" id="fakeWebsitesBtn""> Submit! </button>
+                                </div>
+
+
+                                <!-- The Modal -->
+                            <div id="fakeWebsitesModal" class="modal">
+                                <div class="modal-content">
+                                    <div id="fakewebsites-modal-header" class="modal-header">
+                                        <h2 id="fakewebsites-answer-result"></h2>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img id="email-modal-image"  src="/static/images/image1 copy.jpg">
+                                    </div>
+                                    <div id="fakewebsites-modal-footer" class="modal-footer">
+                                        <button style="float: right;" id="fakeWebsite-close-button"> Close</button>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div id="question2">
-                                <div id='q2-check' class="question-space"> &nbsp; </div>
 
-                                <h5> 1. Which of these websites is real? </h5>
+                            </div>
 
-                                <div class="form-check indent">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="question2" id="q2a1" value="true"> Website 1
-                                    </label>
 
-                                    <br>
+                            <div id="web-results">
+                                <p id="fake-websites-results" class="card card-block card-instruction"></p>
 
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="question2" id="q2a2" value="false"> Website 2
-                                    </label>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item"> <a class="nav-link light-bg" data-toggle="tab" href="#web3" role="tab">Website 1</a> </li>
+                                    <li class="nav-item"> <a class="nav-link lighter-bg active" data-toggle="tab" href="#web4" role="tab">Website 2</a> </li>
+                                </ul>
 
-                                    <br>
+                                <div class="tab-content m-b-1">
+                                    <div class="tab-pane card-block light-bg" id="web3" role="tabpanel">
+                                        <img id="fake-website-image-1" style="max-width: 100%" src="static/images/image1 copy.jpg">
+                                    </div>
 
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="question2" id="q2a3" value="false"> Both
-                                    </label>
-
-                                    <br>
-
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="question2" id="q2a4" value="false"> None
-                                    </label>
+                                    <div class="tab-pane card-block lighter-bg active" id="web4" role="tabpanel">
+                                        <img id="fake-website-image-2" style="max-width: 100%" src="static/images/image2 copy.jpg">
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="form-check" style="text-align: center;">
-                                <button class="submit" onclick="checkQuestion2()"> Submit! </button>
-                            </div>
-
-                            <div id="fake-websites-results"></div>
                         </div>
                         <div class="card card-block">
                             <h5> How do you identify fake websites? </h5>
@@ -291,78 +414,108 @@
                                 <input id="clickClick" value="Submit" type="submit">
                             </form>
 
-                            <a name="results"></a>
-                            <div class="card-deck-wrapper">
-                                <div class="card-deck">
-                                    {% for dict_item in data if dict_item['dob'] or dict_item['age'] or dict_item['relatives'] or dict_item['aliases' ]%}
-                                    <div class="card card-block m-b-1">
-                                        <h4>
+                                <a name="results"></a>
+                                <div class="card-deck-wrapper">
+                                    <div class="card-deck">
+                                        {% for dict_item in data if dict_item['dob'] or dict_item['age'] or dict_item['relatives'] or dict_item['aliases' ]%}
+                                        <div class="card card-block m-b-1">
+                                            <h4>
                                            {% if dict_item['name'] %}
                                            {{dict_item['name']}}</br>
                                            {% endif %}
                                         </h4>
-                                        <p>
-                                            {% if dict_item['dob'] %}
-                                            <b>DOB: </b>{{dict_item['dob']}}</br>
-                                            {% endif %} {% if dict_item['age'] %}
-                                            <b>Age:</b> {{dict_item['age']}}</br>
-                                            {% endif %} {% if dict_item['locations'] %}
-                                            <b>Locations: </b>{{', '.join(dict_item['locations'])}}</br>
-                                            {% endif %} {% if dict_item['marital_status'] %}
-                                            <b>Marital Status:</b> {{dict_item['includes']['marital_status']}}</br>
-                                            {% endif %} {% if dict_item['relatives'] %}
-                                            <b>Relatives: </b>{{', '.join(dict_item['relatives'])}}</br>
-                                            {% endif %} {% if dict_item['aliases' ] %}
-                                            <b>Aliases: </b>{{', '.join(dict_item['aliases'])}}</br>
-                                            {% endif %}
-                                        </p>
+                                            <p>
+                                                {% if dict_item['dob'] %}
+                                                <b>DOB: </b>{{dict_item['dob']}}</br>
+                                                {% endif %} {% if dict_item['age'] %}
+                                                <b>Age:</b> {{dict_item['age']}}</br>
+                                                {% endif %} {% if dict_item['locations'] %}
+                                                <b>Locations: </b>{{', '.join(dict_item['locations'])}}</br>
+                                                {% endif %} {% if dict_item['marital_status'] %}
+                                                <b>Marital Status:</b> {{dict_item['includes']['marital_status']}}</br>
+                                                {% endif %} {% if dict_item['relatives'] %}
+                                                <b>Relatives: </b>{{', '.join(dict_item['relatives'])}}</br>
+                                                {% endif %} {% if dict_item['aliases' ] %}
+                                                <b>Aliases: </b>{{', '.join(dict_item['aliases'])}}</br>
+                                                {% endif %}
+                                            </p>
+                                        </div>
+                                        {% else %}
+                                        <p>No data found. This doesn't mean that you don't have public information on the internet, just that our specific program can't find any.</p>
+                                        {% endfor %}
                                     </div>
-                                    {% else %}
-                                    <p>No data found. This doesn't mean that you don't have public information on the internet, just that our specific program can't find any.</p>
-                                    {% endfor %}
                                 </div>
-                            </div>
-                            </br>
+                                </br>
 
-                            Some tips to keep your information safe and out of the hands of attackers:
-                            <ul class="real-list">
-                                <li>Be mindful of how much personal information you share on social networks.</li>
-                                <li>Dispose of old computers and phones (any device with data) securely.</li>
-                                <li>For password security verification questions, use a password for all answers. The answers to most security questions are things that an attacker can find out about you.</li>
-                            </ul>
+                                Some tips to keep your information safe and out of the hands of attackers:
+                                <ul class="real-list">
+                                    <li>Be mindful of how much personal information you share on social networks.</li>
+                                    <li>Dispose of old computers and phones (any device with data) securely.</li>
+                                    <li>For password security verification questions, use a password for all answers. The answers to most security questions are things that an attacker can find out about you.</li>
+                                </ul>
+                            </div>
+                            <div class="card card-block no-border"> <a id="se-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('social_engineering_quiz') }}" role="button"> Take the quiz! </a> </div>
                         </div>
-                        <div class="card card-block no-border"> <a id="p-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('social_engineering_quiz') }}" role="button"> Take the quiz! </a> </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="static/js/util.js"></script>
-    <script src="static/js/tab.js"></script>
-    <script src="static/js/scrollspy.js"></script>
-    <script src="static/js/jquery.scrollTo.min.js"></script>
-    <script src="static/js/csam.js"></script>
-    <script>
-    $(function () {
-            window.location.hash = "results";
-        });
-        $('body').scrollspy({
-            target: '#sidebar',
-            offset: ($(window).height() * .075)
-        });
-        $(document).ready(function () {
-            $('#sidebar-links > li > a[href^="#"]').click(function (e) {
-                e.preventDefault();
-                $(window).stop(true).scrollTo(this.hash, {
-                    duration: 700,
-                    interrupt: true,
-                    offset: -90,
-                    easing: "swing"
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="static/js/util.js"></script>
+        <script src="static/js/tab.js"></script>
+        <script src="static/js/scrollspy.js"></script>
+        <script src="static/js/jquery.scrollTo.min.js"></script>
+        <script src="static/js/csam.js"></script>
+        <script>
+            $(function () {
+                window.location.hash = "results";
+            });
+            $('body').scrollspy({
+                target: '#sidebar',
+                offset: ($(window).height() * .075)
+            });
+            $(document).ready(function () {
+                $('#sidebar-links > li > a[href^="#"]').click(function (e) {
+                    e.preventDefault();
+                    $(window).stop(true).scrollTo(this.hash, {
+                        duration: 700,
+                        interrupt: true,
+                        offset: -90,
+                        easing: "swing"
+                    });
                 });
             });
-        });
-    </script>
+
+            // Get the email modal
+    var emailModal = document.getElementById('emailModal');
+
+    // Get the button that opens the email modal
+    var emailBtn = document.getElementById("emailBtn");
+
+    // When the user clicks on the button, open the modal 
+    emailBtn.onclick = function() {
+        emailModal.style.display = "block";
+        checkQuestion1();
+    }
+    
+    // Get the email modal
+    var fakeWebsitesModal = document.getElementById('fakeWebsitesModal');
+
+    // Get the button that opens the email modal
+    var fakeWebsitesBtn = document.getElementById("fakeWebsitesBtn");
+
+    // When the user clicks on the button, open the modal 
+    fakeWebsitesBtn.onclick = function() {
+        fakeWebsitesModal.style.display = "block";
+        checkQuestion2();
+    }
+
+    var fakeWebsitesCloseBtn = document.getElementById("fakeWebsite-close-button");
+
+    fakeWebsitesCloseBtn.onclick = function() {
+        fakeWebsitesModal.style.display = "none";
+    }
+        </script>
 </body>
 
 </html>

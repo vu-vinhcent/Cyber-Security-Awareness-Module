@@ -22,7 +22,7 @@
     <![endif]-->
 </head>
 
-<body>
+<body onload="checkProgress()">
 
     <header class="navbar navbar-full navbar-light navbar-fixed-top hidden-sm-down">
         <nav class="nav navbar-nav">
@@ -34,6 +34,7 @@
                 <a class="nav-item nav-link" href="{{ url_for('social_eng') }}"> Social Engineering </a>
                 <a class="nav-item nav-link" href="{{ url_for('browser') }}"> Browser Security </a>
                 <a class="nav-item nav-link" href="{{ url_for('mobile') }}"> Mobile Security </a>
+                <a class="nav-item nav-link" href="{{ url_for('malware') }}"> Malware </a>
             </div>
         </nav>
     </header>
@@ -51,15 +52,19 @@
 
     <div id="main" class="container-fluid hidden-sm-down">
         <div class="row">
-            <div class="jumbotron jumbotron-fluid col-md-12">
+            <div class="jumbotron jumbotron-fluid col-md-12 p-a-2">
                 <div class="container">
                     <h1 class="display-3"> Mobile Security Quiz </h1>
-                    <h4 class="lead"> Test your knowledge with a quiz! </h4>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="container">
+              <p class="card card-block card-instruction">
+                Enter your answers and press submit. If you get them both right you can
+                proceed to the next module by clicking "Start a new module!", otherwise you can attempt the
+                quiz again or go back to the module to revisit the material by clicking "Back to the module!".
+              </p>
                 <div class="card card-block no-border">
 
                     <div id="question1" class="card card-block">
@@ -96,26 +101,29 @@
                     <div id="question2" class="card card-block">
                         <div id='q2-check' class="question-space"> &nbsp; </div>
 
-                        <h5> 1. Which of these is true about third-party apps? </h5>
+                        <h5> 2. Which of these is true?</h5>
 
                         <div class="form-check indent">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="question2" id="q2a1" value="false"> Third-party apps are always safe
+                                <input class="form-check-input" type="radio" name="question2" id="q2a1" value="false"> Apps ask only for permissions to access information necessary to deliver their promise
                             </label>
 
                             <br>
 
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="question2" id="q21a2" value="true"> Third-party apps are never safe
+                                <input class="form-check-input" type="radio" name="question2" id="q21a2" value="false"> Third-party apps are always safe
                             </label>
 
                             <br>
 
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="question2" id="q2a3" value="false"> Third-party apps are sometimes safe
+                                <input class="form-check-input" type="radio" name="question2" id="q2a3" value="true"> The name of a Wi-Fi network is not an indication that it is secure to connect to it
                             </label>
 
                             <br>
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="question2" id="q2a4" value="false"> None of the above
+                            </label>
                         </div>
 
                     </div>
@@ -126,7 +134,7 @@
 
                     <div class="card card-block no-border" style="text-align: center;">
                         <a class="btn btn-primary btn-lg next" href="/mobile" role="button"> Back to the module! </a>
-                        <a id="ms" class="btn btn-primary btn-lg next disabled" href="/" role="button" onclick="checkQuestion(this)"> Start a new module! </a>
+                        <a id="mos" class="btn btn-primary btn-lg next disabled" href="/" role="button" onclick="checkQuestion(this)"> Start a new module! </a>
                     </div>
                 </div>
             </div>

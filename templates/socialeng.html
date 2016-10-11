@@ -21,6 +21,68 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+    .red-flag{
+      border-style: solid;
+      border-width: 1px;
+      border-color:red;
+    }
+    /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 70px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: white;
+    color: white;
+    height:7%;
+}
+    </style>
+
 </head>
 
 <body data-spy="scroll" data-target="#sidebar">
@@ -36,6 +98,7 @@
                 <a class="nav-item nav-link active" href="{{ url_for('social_eng') }}"> Social Engineering </a>
                 <a class="nav-item nav-link" href="{{ url_for('browser') }}"> Browser Security </a>
                 <a class="nav-item nav-link" href="{{ url_for('mobile') }}"> Mobile Security </a>
+                <a class="nav-item nav-link" href="{{ url_for('malware') }}"> Malware </a>
             </div>
         </nav>
     </header>
@@ -52,7 +115,7 @@
 
     <div id="main" class="container-fluid hidden-sm-down">
         <div class="row">
-            <div class="jumbotron jumbotron-fluid col-md-12">
+            <div class="jumbotron jumbotron-fluid col-md-12 p-a-2">
                 <div class="container">
                     <h1 class="display-3"> Social Engineering </h1>
                     <!--<h4 class="lead"> Introduction or description of the module for people to read before they actually do it. </h4> </div>-->
@@ -78,7 +141,7 @@
                         </div>
                     </div>
                     <div id="content" class="col-md-10">
-                        <p class="card card-block card-instruction"> Instructions will look like this. </p>
+
 
                         <div class="card card-block">
                             <h3 id="phishing" class="card-title"> Phishing and You </h3>
@@ -94,14 +157,14 @@
                             <div class="tab-content">
                                 <div class="tab-pane card-block light-bg active" id="level1" role="tabpanel">
                                     <p> To: a_student@columbusstate.edu
-                                        <br> From: "John Smith" &lt;john_smith@schoolfeepayment.xyz&gt;
-                                        <br> Subject: URGENT! Unbalanced account, dropped classes now if no REPLY
+                                        <br> From: "John Smith" <span class="red-flag-unmarked">&lt;john_smith@schoolfeepayment.xyz&gt;</span>
+                                        <br> Subject: <span class="red-flag-unmarked">URGENT! </span>Unbalanced account, dropped classes now if no REPLY
                                     </p>
                                     <p> Hello! </p>
-                                    <p> Your school account is nonbalanced. You will be dropped from all classes if administrative fee is not paid. Punishment fees may be charged to your account if you fail to pay in a timely manner. </p>
+                                    <p> Your school account is <span class="red-flag-unmarked">nonbalanced</span>. You will be dropped from all classes if administrative fee is not paid. Punishment fees may be charged to your account if you fail to pay in a timely manner. </p>
                                     <p> You owe: $12.56 administrator fee. </p>
-                                    <p> Please do the needful and pay your account <span class="fake-link">here</span> or at <span class="fake-link">schoolfeepayment.xyz</span> </p>
-                                    <p> Thx, Jon Smith</p>
+                                    <p> Please do the needful and pay your account <span class="fake-link red-flag-unmarked">here</span> or at <span class="fake-link">schoolfeepayment.xyz</span> </p>
+                                    <p> <span class="red-flag-unmarked">Thx</span>, Jon Smith</p>
 
                                 </div>
 
@@ -113,14 +176,14 @@
                                     <p> Hello, </p>
                                     <p> Or records show that you may be the victim of a computer virus or phishing scheme which has now taken control of your FAFSA Student Aid account. </p>
                                     <p> Your FAFSA account contains sensitive personal information including, but not limited to: </p>
-                                    <p> your social security #
+                                    <p> <span class="red-flag-unmarked">your social security #</span>
                                         <br> Your parents' social security numbers
-                                        <br> Financial information form tax returns.
+                                        <br> <span class="red-flag-unmarked">Financial information form tax returns.</span>
                                         <br> Your personal address.
-                                        <br> The schools you have attending
+                                        <br> <span class="red-flag-unmarked">The schools you have attending</span>
                                     </p>
 
-                                    <p> At U.S. Department of Education, we care deeply about your security and will NEVER ask you for personal information over email. Instead, please go to this site and login to begin the process of recovering your account: <span class="fake-link">Recover Your Account here</span> </p>
+                                    <p> At U.S. Department of Education, we care deeply about your security and will NEVER ask you for personal information over email. Instead, please go to this site and login to begin the process of recovering your account: <span class="fake-link red-flag-unmarked">Recover Your Account here</span> </p>
 
                                 </div>
                             </div>
@@ -158,8 +221,25 @@
                             </div>
 
                             <div class="form-check" style="text-align: center;">
-                                <button class="submit" onclick="checkQuestion1()"> Submit! </button>
+                                <button id="emailBtn" class="submit"> Submit! </button>
                             </div>
+
+
+                            <!-- The Modal -->
+                            <div id="emailModal" class="modal">
+                                <div class="modal-content">
+                                    <div id="email-modal-header" class="modal-header">
+                                        <h2 id="email-answer-result"></h2>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img id="email-modal-image" src="/static/images/email-result1.png">
+                                    </div>
+                                    <div id="email-modal-footer" class="modal-footer">
+                                        <button style="float: right;" onclick="emailResults()" id="email-modal-button"> Go to email 2</button>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div id="email-results"></div>
                         </div>
 
@@ -182,7 +262,7 @@
 
                             <div id="fake-web-exer">
 
-                                <p class="card card-block card-instruction"> Click on the tabs below to switch between two websites. Which one is real? </p>
+                                <p class="card card-block card-instruction"> Click on the tabs below to switch between two websites. Which one is legitimate? </p>
 
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item"> <a class="nav-link light-bg active" data-toggle="tab" href="#web1" role="tab">Website 1</a> </li>
@@ -202,7 +282,7 @@
                                 <div id="question2">
                                     <div id='q2-check' class="question-space"> &nbsp; </div>
 
-                                    <h5> 1. Which of these websites is real? </h5>
+                                    <h5> 1. Which of these websites is legitimate? </h5>
 
                                     <div class="form-check indent">
                                         <label class="form-check-label">
@@ -230,8 +310,26 @@
                                 </div>
 
                                 <div class="form-check" style="text-align: center;">
-                                    <button class="submit" onclick="checkQuestion2()"> Submit! </button>
+                                    <button class="submit" id="fakeWebsitesBtn""> Submit! </button>
                                 </div>
+
+
+                                <!-- The Modal -->
+                            <div id="fakeWebsitesModal" class="modal">
+                                <div class="modal-content">
+                                    <div id="fakewebsites-modal-header" class="modal-header">
+                                        <h2 id="fakewebsites-answer-result"></h2>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img id="email-modal-image"  src="/static/images/image1 copy.jpg">
+                                    </div>
+                                    <div id="fakewebsites-modal-footer" class="modal-footer">
+                                        <button style="float: right;" id="fakeWebsite-close-button"> Close</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
                             </div>
 
 
@@ -323,7 +421,7 @@
                                 <li>For password security verification questions, use a password for all answers. The answers to most security questions are things that an attacker can find out about you.</li>
                             </ul>
                         </div>
-                        <div class="card card-block no-border"> <a id="p-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('social_engineering_quiz') }}" role="button"> Take the quiz! </a> </div>
+                        <div class="card card-block no-border"> <a id="se-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('social_engineering_quiz') }}" role="button"> Take the quiz! </a> </div>
                     </div>
                 </div>
             </div>
@@ -351,7 +449,39 @@
                 });
             });
         });
+
+    // Get the email modal
+    var emailModal = document.getElementById('emailModal');
+
+    // Get the button that opens the email modal
+    var emailBtn = document.getElementById("emailBtn");
+
+    // When the user clicks on the button, open the modal 
+    emailBtn.onclick = function() {
+        emailModal.style.display = "block";
+        checkQuestion1();
+    }
+    
+    // Get the email modal
+    var fakeWebsitesModal = document.getElementById('fakeWebsitesModal');
+
+    // Get the button that opens the email modal
+    var fakeWebsitesBtn = document.getElementById("fakeWebsitesBtn");
+
+    // When the user clicks on the button, open the modal 
+    fakeWebsitesBtn.onclick = function() {
+        fakeWebsitesModal.style.display = "block";
+        checkQuestion2();
+    }
+
+    var fakeWebsitesCloseBtn = document.getElementById("fakeWebsite-close-button");
+
+    fakeWebsitesCloseBtn.onclick = function() {
+        fakeWebsitesModal.style.display = "none";
+    }
+    
     </script>
+
 </body>
 
 </html>

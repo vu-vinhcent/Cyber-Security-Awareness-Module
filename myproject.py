@@ -66,6 +66,10 @@ def mobile():
 def browser():
     return render_template('browser.html')
 
+@application.route('/malware', methods=["GET"])
+def malware():
+    return render_template('malware.html')
+
 @application.route('/passwords_quiz', methods=["GET"])
 def passwords_quiz():
     return render_template('passwords-quiz.html')
@@ -82,17 +86,32 @@ def mobile_quiz():
 def browser_quiz():
     return render_template('browser-quiz.html')
 
+@application.route('/malware_quiz', methods=["GET"])
+def malware_quiz():
+    return render_template('malware-quiz.html')
+
 @application.route('/get_info', methods=["GET"])
 def get_info():
     return render_template('get-info.html')
 
 @application.route('/completion', methods=["GET", "POST"])
 def completion():
-    rendered = render_template("completion.html", data={'name' : request.form['name'], 'date' : time.strftime("%d/%m/%Y")})
-    pdf = pdfkit.from_string(rendered, False)
+
+    options = {
+        'page-size': 'Legal',
+        'margin-top': '0.75in',
+        'margin-right': '0.75in',
+        'margin-bottom': '0.75in',
+        'margin-left': '0.75in',
+        'encoding': "UTF-8",
+        'no-outline': None
+    }
+    config = pdfkit.configuration(wkhtmltopdf='/usr/local/bin/wkhtmltopdf')
+    rendered = render_template("completion.html", data={'name' : request.form['name'], 'date' : time.strftime("%m/%d/%Y")})
+    pdf = pdfkit.from_string(rendered, False, configuration=config, options=options)
     response = make_response(pdf)
     response.headers['Content-Type'] = 'application/pdf'
-    response.headers['Content-Disposition'] = 'attachment; filename=output.pdf'
+    response.headers['Content-Disposition'] = 'inline; filename=output.pdf'
     return response
 
 if __name__ == "__main__":

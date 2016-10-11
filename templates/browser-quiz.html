@@ -22,7 +22,7 @@
     <![endif]-->
 </head>
 
-<body>
+<body onload="checkProgress()">
 
     <header class="navbar navbar-full navbar-light navbar-fixed-top hidden-sm-down">
         <nav class="nav navbar-nav">
@@ -34,6 +34,7 @@
                 <a class="nav-item nav-link" href="{{ url_for('social_eng') }}"> Social Engineering </a>
                 <a class="nav-item nav-link" href="{{ url_for('browser') }}"> Browser Security </a>
                 <a class="nav-item nav-link" href="{{ url_for('mobile') }}"> Mobile Security </a>
+                <a class="nav-item nav-link" href="{{ url_for('malware') }}"> Malware </a>
             </div>
         </nav>
     </header>
@@ -51,15 +52,19 @@
 
     <div id="main" class="container-fluid hidden-sm-down">
         <div class="row">
-            <div class="jumbotron jumbotron-fluid col-md-12">
+            <div class="jumbotron jumbotron-fluid col-md-12 p-a-2">
                 <div class="container">
                     <h1 class="display-3"> Browser Security Quiz </h1>
-                    <h4 class="lead"> Test your knowledge with a quiz! </h4>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="container">
+              <p class="card card-block card-instruction">
+                Enter your answers and press submit. If you get them both right you can
+                proceed to the next module by clicking "Start a new module!", otherwise you can attempt the
+                quiz again or go back to the module to revisit the material by clicking "Back to the module!".
+              </p>
                 <div class="card card-block no-border">
 
                     <div id="question1" class="card card-block">
@@ -117,7 +122,7 @@
                     </div>
 
                     <div class="card card-block no-border" style="text-align: center;">
-                        <a class="btn btn-primary btn-lg next" href="/passwords" role="button"> Back to the module! </a>
+                        <a class="btn btn-primary btn-lg next" href="/browser" role="button"> Back to the module! </a>
                         <a id="bs" class="btn btn-primary btn-lg next disabled" href="/" role="button" onclick="checkQuestion(this)"> Start a new module! </a>
                     </div>
                 </div>
