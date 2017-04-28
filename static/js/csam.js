@@ -120,11 +120,11 @@ function emailResults() {
 function checkQuestion2() {
     if ($('input[name=question2]:checked').val() == 'true') {
         $("#q2-check").replaceWith('<span id="q2-check" class="question-space green"> &#10004; </span>');
-        document.getElementById("fakewebsites-answer-result").innerHTML  = "Correct! Website 1 is legitimate."
+        document.getElementById("fakewebsites-answer-result").innerHTML  = "Correct! Website 1 is legitimate and Website 2 is fake."
         document.getElementById("fakewebsites-modal-header").style.backgroundColor = "green";
     } else {
         $("#q2-check").replaceWith('<span id="q2-check" class="question-space red"> &#10008; </span>');
-        document.getElementById("fakewebsites-answer-result").innerHTML = "Incorrect! Website 1 is legitimate."
+        document.getElementById("fakewebsites-answer-result").innerHTML = "Incorrect! Website 1 is legitimate and Website 2 is fake."
         document.getElementById("fakewebsites-modal-header").style.backgroundColor = "red";
     }
 }

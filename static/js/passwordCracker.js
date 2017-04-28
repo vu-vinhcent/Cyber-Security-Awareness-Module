@@ -39,7 +39,15 @@ function searchDict() {
     timeTaken = findWord(dictionaryAttack, password);
 }
 
+function isInArray(value, array) {
+  return array.indexOf(value) > -1;
+}
+
 function guessPassword() {
+    var upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    var symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")",  "-", "+", "_", "=", "[", "]", "{", "}", ";", ":", "'", "\"", "<", ",", ">", ".", "?", "/"];
+    var numbers = ["1","2","3","4","5","6","7","8","9","0"]
     var password = $('#passwordTxt').val(),
         i = 0,
         searchSpace = 0,
@@ -73,18 +81,22 @@ function guessPassword() {
     } else {
         // Determines what the password has in it.
         for (i; i < password.length; i++) {
-            if (/[@~`!#$%\^&*+=\-\[\]\\';,/{}|\\": <>\?]/.test(password)) {
-                hasSymbol = true;
-            }
             character = password.charAt(i);
-            if (!isNaN(character * 2) && character != ' ') {
+            if (isInArray(character, symbols)) {
+                hasSymbol = true;
+                continue;
+            }
+            if (isInArray(character, numbers)) {
                 hasNumber = true;
+                continue;
             }
-            if (character == character.toUpperCase() && character != ' ') {
+            if (isInArray(character, upper)) {
                 hasUpper = true;
+                continue;
             }
-            if (character == character.toLowerCase() && character != ' ') {
+            if (isInArray(character, lower)) {
                 hasLower = true;
+                continue;
             }
         }
         // Definitely need to do something about below...
