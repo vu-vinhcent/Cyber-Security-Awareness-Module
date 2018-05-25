@@ -76,6 +76,10 @@ def mobile():
 def browser():
     return render_template('browser.html')
 
+@application.route('/about', methods=["GET"])
+def about():
+    return render_template('about.html')
+
 
 @application.route('/malware', methods=["GET"])
 def malware():
