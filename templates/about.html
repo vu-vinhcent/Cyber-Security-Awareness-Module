@@ -1,0 +1,159 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> About </title>
+
+    <link type="text/css" rel="stylesheet" href="static/css/csam.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <link rel="apple-touch-icon" sizes="76x76" href="static/images/favicons/apple-touch-icon-76x76.png">
+    <link rel="icon" type="image/png" href="static/images/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="shortcut icon" href="static/images/favicons/favicon.ico">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body data-spy="scroll" data-target="#sidebar">
+    <div id="bg"></div>
+
+    <header class="navbar navbar-full navbar-light navbar-fixed-top hidden-sm-down">
+        <nav class="nav navbar-nav">
+            <div class="pull-xs-left">
+                <a class="nav-item nav-link" href="{{ url_for('index') }}"> Home </a>
+            </div>
+            <div class="pull-xs-right">
+                <a class="nav-item nav-link" href="{{ url_for('passwords') }}"> Passwords </a>
+                <a class="nav-item nav-link" href="{{ url_for('social_eng') }}"> Social Engineering </a>
+                <a class="nav-item nav-link" href="{{ url_for('browser') }}"> Browser Security </a>
+                <a class="nav-item nav-link" href="{{ url_for('mobile') }}"> Mobile Security </a>
+                <a class="nav-item nav-link" href="{{ url_for('malware') }}"> Malware </a>
+                <a class="nav-item nav-link active" href="{{ url_for('about') }}"> About </a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid hidden-md-up p-x-0">
+        <div class="row">
+            <div class="card">
+                <div class="card-block text-xs-center">
+                    <h3> Unfortunately, this content is unable to be viewed on this resolution. Please view it on a computer or change the orientation of your tablet. </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main" class="container-fluid hidden-sm-down">
+        <div class="row">
+            <div class="jumbotron jumbotron-fluid col-md-12 p-a-2">
+                <div class="container">
+                    <h1 class="display-3"> About </h1>
+                    <!--<h4 class="lead"> Introduction or description of the module for people to read before they actually do it. </h4> </div>-->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="container">
+                <div id="content-container" class="row">
+
+                    <div id="content" class="col-md-12">
+                        <div class="card card-block">
+                            <h3 id="cookies" class="card-title"> Project Abstract </h3>
+                            <hr>
+
+                            <h5> Cybersecurity Awareness Module (CSAM) Project started as an interdisciplinary project where faculty and students  from Computer Science and Psychology Departments collaborated to develop an interactive module to raise cybersecurity awareness among college students. The project was initially funded by the Interdisciplinary Initiatives Grant and the Department of Computer Science at Columbus State University in Columbus, GA in Spring 2016. The project is still being funded by the Department of Computer Science.  A  pre and post-survey instrument was developed and used along with the module to asses its effectiveness. Survey results from over  200 college students and over 100 high school students indicate a significant increase in students' awareness. </h5>
+                        </div>
+                        <div class="card card-block">
+                            <h3 id="cookies" class="card-title"> Contributors </h3>
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-md-4 p-a-2">
+                                    <b>Dr. Stephanie da Silva</b>
+                                    <br> Professor, Department of Psychology
+                                    <br> Columbus State University
+                                </div>
+                                <div class="col-md-4 p-a-2">
+                                    <b>Dr. Yesem Peker</b>
+                                    <br> Professor, Department of Computer Science
+                                    <br> Columbus State University
+                                </div>
+                                <div class="col-md-4 p-a-2">
+                                    <b>Dr. Lydia Ray</b>
+                                    <br> Professor, Department of Computer Science
+                                    <br> Columbus State University
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4 p-a-2">
+                                    <b>Matthew Bowen</b>
+                                    <br> Student
+                                    <br> Columbus State University
+                                </div>
+                                <div class="col-md-4 p-a-2">
+                                    <b>Nataniel Gibson</b>
+                                    <br> Student
+                                    <br> Columbus State University
+                                </div>
+                                <div class="col-md-4 p-a-2">
+                                    <b>Chris Lamberson</b>
+                                    <br> Student
+                                    <br> Columbus State University
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4 p-a-2">
+                                    <b>Tyler Staut</b>
+                                    <br> Student
+                                    <br> Columbus State University
+                                </div>
+                                <div class="col-md-4 p-a-2">
+                                    <b>Vinhcent Vu</b>
+                                    <br> Student
+                                    <br> Columbus State University
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="static/js/csam.js"></script>
+        <script src="static/js/passwordCracker.js"></script>
+        <!--<script src="static/js/jquery.scrollTo.min.js"></script>-->
+        <script src="static/js/util.js"></script>
+        <!--<script src="static/js/scrollspy.js"></script>-->
+        <script src="static/js/tab.js"></script>
+        <!--<script>
+        $('body').scrollspy({
+            target: '#sidebar',
+            offset: ($(window).height() * .075)
+        });
+        $(document).ready(function () {
+            $('#sidebar-links > li > a[href^="#"]').click(function (e) {
+                e.preventDefault();
+                $(window).stop(true).scrollTo(this.hash, {
+                    duration: 700,
+                    interrupt: true,
+                    offset: -90,
+                    easing: "swing"
+                });
+            });
+        });
+    </script>-->
+    </div>
+</body>
+
+</html>

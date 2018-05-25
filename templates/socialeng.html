@@ -22,65 +22,89 @@
     <![endif]-->
 
     <style>
-    .red-flag{
-      border-style: solid;
-      border-width: 1px;
-      border-color:red;
-    }
-    /* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 70px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    width: 90%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
-}
-
-/* Add Animation */
-@-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-}
-
-@keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-}
-
-.modal-header {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
-}
-
-.modal-body {padding: 2px 16px;}
-
-.modal-footer {
-    padding: 2px 16px;
-    background-color: white;
-    color: white;
-    height:7%;
-}
+        .red-flag {
+            border-style: solid;
+            border-width: 1px;
+            border-color: red;
+        }
+        /* The Modal (background) */
+        
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 70px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+        /* Modal Content */
+        
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            width: 90%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+        /* Add Animation */
+        
+        @-webkit-keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+        
+        @keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+        
+        .modal-header {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+        
+        .modal-body {
+            padding: 2px 16px;
+        }
+        
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: white;
+            color: white;
+            height: 7%;
+        }
     </style>
 
 </head>
@@ -99,6 +123,7 @@
                 <a class="nav-item nav-link" href="{{ url_for('browser') }}"> Browser Security </a>
                 <a class="nav-item nav-link" href="{{ url_for('mobile') }}"> Mobile Security </a>
                 <a class="nav-item nav-link" href="{{ url_for('malware') }}"> Malware </a>
+                <a class="nav-item nav-link" href="{{ url_for('about') }}"> About </a>
             </div>
         </nav>
     </header>
@@ -310,21 +335,21 @@
                                 </div>
 
                                 <div class="form-check" style="text-align: center;">
-                                    <button class="submit" id="fakeWebsitesBtn""> Submit! </button>
+                                    <button class="submit" id="fakeWebsitesBtn" "> Submit! </button>
                                 </div>
 
 
                                 <!-- The Modal -->
-                            <div id="fakeWebsitesModal" class="modal">
-                                <div class="modal-content">
-                                    <div id="fakewebsites-modal-header" class="modal-header">
-                                        <h2 id="fakewebsites-answer-result"></h2>
+                            <div id="fakeWebsitesModal " class="modal ">
+                                <div class="modal-content ">
+                                    <div id="fakewebsites-modal-header " class="modal-header ">
+                                        <h2 id="fakewebsites-answer-result "></h2>
                                     </div>
-                                    <div class="modal-body">
-                                        <img id="email-modal-image"  src="/static/images/image1 copy.jpg">
+                                    <div class="modal-body ">
+                                        <img id="email-modal-image "  src="/static/images/image1 copy.jpg ">
                                     </div>
-                                    <div id="fakewebsites-modal-footer" class="modal-footer">
-                                        <button style="float: right;" id="fakeWebsite-close-button"> Close</button>
+                                    <div id="fakewebsites-modal-footer " class="modal-footer ">
+                                        <button style="float: right; " id="fakeWebsite-close-button "> Close</button>
                                     </div>
                                 </div>
                             </div>
@@ -333,119 +358,119 @@
                             </div>
 
 
-                            <div id="web-results">
-                                <p id="fake-websites-results" class="card card-block card-instruction"></p>
+                            <div id="web-results ">
+                                <p id="fake-websites-results " class="card card-block card-instruction "></p>
 
-                                <ul class="nav nav-tabs" role="tablist">
-                                    <li class="nav-item"> <a class="nav-link light-bg" data-toggle="tab" href="#web3" role="tab">Website 1</a> </li>
-                                    <li class="nav-item"> <a class="nav-link lighter-bg active" data-toggle="tab" href="#web4" role="tab">Website 2</a> </li>
+                                <ul class="nav nav-tabs " role="tablist ">
+                                    <li class="nav-item "> <a class="nav-link light-bg " data-toggle="tab " href="#web3 " role="tab ">Website 1</a> </li>
+                                    <li class="nav-item "> <a class="nav-link lighter-bg active " data-toggle="tab " href="#web4 " role="tab ">Website 2</a> </li>
                                 </ul>
 
-                                <div class="tab-content m-b-1">
-                                    <div class="tab-pane card-block light-bg" id="web3" role="tabpanel">
-                                        <img id="fake-website-image-1" style="max-width: 100%" src="static/images/image1 copy.jpg">
+                                <div class="tab-content m-b-1 ">
+                                    <div class="tab-pane card-block light-bg " id="web3 " role="tabpanel ">
+                                        <img id="fake-website-image-1 " style="max-width: 100% " src="static/images/image1 copy.jpg ">
                                     </div>
 
-                                    <div class="tab-pane card-block lighter-bg active" id="web4" role="tabpanel">
-                                        <img id="fake-website-image-2" style="max-width: 100%" src="static/images/image2 copy.jpg">
+                                    <div class="tab-pane card-block lighter-bg active " id="web4 " role="tabpanel ">
+                                        <img id="fake-website-image-2 " style="max-width: 100% " src="static/images/image2 copy.jpg ">
                                     </div>
                                 </div>
                             </div>
 
                         </div>
-                        <div class="card card-block">
+                        <div class="card card-block ">
                             <h5> How do you identify fake websites? </h5>
-                            <ul class="real-list">
+                            <ul class="real-list ">
                                 <li> Check the URL! URLs are unique, so no two websites can have the same URL. However, <i>www.google.com</i> and <i>www.goog1e.com</i> can look a lot alike, especially at a glance.</li>
                                 <li> Check whether the website is using HTTPS or HTTP. Most websites that involve secure transactions or your personal information will use HTTPS. </li>
-                                <li> Sometimes, websites use special fonts, which cannot be easily replicated. Watch out for fonts that look out of place, like <span style="font-family: Times New Roman;"> this part of the sentence</span>.</li>
+                                <li> Sometimes, websites use special fonts, which cannot be easily replicated. Watch out for fonts that look out of place, like <span style="font-family: Times New Roman; "> this part of the sentence</span>.</li>
                                 <li> Obvious grammar errors are also a suspicious sign. Very rarely will there be grammar errors on genuine websites, especially ones for businesses. </li>
                             </ul>
                         </div>
-                        <div class="card card-block">
-                            <h5 id="spearphishing"> Spear Phishing </h5>
+                        <div class="card card-block ">
+                            <h5 id="spearphishing "> Spear Phishing </h5>
                             <p>
-                                "Spear Phishing" is a specific type of phishing attack that appears to come from a trusted source. Attackers can use information they find online to impersonate someone that the victim trusts, increasing the chance of a successful attack.
+                                "Spear Phishing " is a specific type of phishing attack that appears to come from a trusted source. Attackers can use information they find online to impersonate someone that the victim trusts, increasing the chance of a successful attack.
                             </p>
-                            <div id="spearphishing-image">
-                                <img style="margin: auto;display: block;" src="/static/images/phishing-email.png">
+                            <div id="spearphishing-image ">
+                                <img style="margin: auto;display: block; " src="/static/images/phishing-email.png ">
                             </div>
                             <br/>
-                            <div id="question3">
-                                <div id='q3-check' class="question-space"> &nbsp; </div>
+                            <div id="question3 ">
+                                <div id='q3-check' class="question-space "> &nbsp; </div>
 
                                 <h5> Do you think that this is a phishing email? </h5>
 
-                                <div class="form-check indent">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="question3" id="q3a1" value="true"> Yes
+                                <div class="form-check indent ">
+                                    <label class="form-check-label ">
+                                        <input class="form-check-input " type="radio " name="question3 " id="q3a1 " value="true "> Yes
                                     </label>
 
                                     <br>
 
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="question3" id="q3a2" value="false"> No
+                                    <label class="form-check-label ">
+                                        <input class="form-check-input " type="radio " name="question3 " id="q3a2 " value="false "> No
                                     </label>
 
                                     <br>
 
                                 </div>
                             </div>
-                            <div class="form-check" style="text-align: center;">
-                                <button class="submit" onclick="checkQuestion3()"> Submit! </button>
+                            <div class="form-check " style="text-align: center; ">
+                                <button class="submit " onclick="checkQuestion3() "> Submit! </button>
                             </div>
-                            <div id="phishing-results"></div>
+                            <div id="phishing-results "></div>
                         </div>
-                        <div class="card card-block">
-                            <h5 id="privacy">Privacy</h5>
+                        <div class="card card-block ">
+                            <h5 id="privacy ">Privacy</h5>
                             <p>
                                 Disclosing personal information on the internet can have devastating effects. Social networks can provide attackers with information such as full name, DOB, hometown, relationship information, education, graduation dates, pet names, interests, hobbies, and affiliations. This information can be used in a spear phishing attack to gain further information about a target, as well as crafting targeted password attacks.
                                 <br/>
                                 <br/> There is a shocking amount of information available online. Knowing someone's name and location is often all you need to find specific details about someone.
                             </p>
 
-                            <p class="card card-block card-instruction">Type your first and last name into the form below to see if we can find information about you. Results do not imply that your personal information is at risk.</p>
+                            <p class="card card-block card-instruction ">Type your first and last name into the form below to see if we can find information about you. Results do not imply that your personal information is at risk.</p>
 
-                            <form method="POST">
-                                <fieldset class="form-group" style="padding-bottom:10px;">
-                                    <input name="firstname" type="text" class="form-control" placeholder="First Name" required>
-                                    <input name="lastname" type="text" class="form-control" placeholder="Last Name" required>
+                            <form method="POST ">
+                                <fieldset class="form-group " style="padding-bottom:10px; ">
+                                    <input name="firstname " type="text " class="form-control " placeholder="First Name " required>
+                                    <input name="lastname " type="text " class="form-control " placeholder="Last Name " required>
                                 </fieldset>
-                                <input id="clickClick" value="Submit" type="submit">
+                                <input id="clickClick " value="Submit " type="submit ">
                             </form>
 
                             Some tips to keep your information safe and out of the hands of attackers:
-                            <ul class="real-list">
+                            <ul class="real-list ">
                                 <li>Be mindful of how much personal information you share on social networks.</li>
                                 <li>Dispose of old computers and phones (any device with data) securely.</li>
                                 <li>For password security verification questions, use a password for all answers. The answers to most security questions are things that an attacker can find out about you.</li>
                             </ul>
                         </div>
-                        <div class="card card-block no-border"> <a id="se-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('social_engineering_quiz') }}" role="button"> Take the quiz! </a> </div>
+                        <div class="card card-block no-border "> <a id="se-button " class="btn btn-primary btn-lg btn-block " href="{{ url_for( 'social_engineering_quiz') }} " role="button "> Take the quiz! </a> </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="static/js/util.js"></script>
-    <script src="static/js/tab.js"></script>
-    <script src="static/js/scrollspy.js"></script>
-    <script src="static/js/jquery.scrollTo.min.js"></script>
-    <script src="static/js/csam.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js "></script>
+    <script src="static/js/util.js "></script>
+    <script src="static/js/tab.js "></script>
+    <script src="static/js/scrollspy.js "></script>
+    <script src="static/js/jquery.scrollTo.min.js "></script>
+    <script src="static/js/csam.js "></script>
     <script>
         $('body').scrollspy({
             target: '#sidebar',
             offset: ($(window).height() * .075)
         });
         $(document).ready(function () {
-            $('#sidebar-links > li > a[href^="#"]').click(function (e) {
+            $('#sidebar-links > li > a[href^="# "]').click(function (e) {
                 e.preventDefault();
                 $(window).stop(true).scrollTo(this.hash, {
                     duration: 700,
                     interrupt: true,
                     offset: -90,
-                    easing: "swing"
+                    easing: "swing "
                 });
             });
         });
@@ -454,11 +479,11 @@
     var emailModal = document.getElementById('emailModal');
 
     // Get the button that opens the email modal
-    var emailBtn = document.getElementById("emailBtn");
+    var emailBtn = document.getElementById("emailBtn ");
 
     // When the user clicks on the button, open the modal 
     emailBtn.onclick = function() {
-        emailModal.style.display = "block";
+        emailModal.style.display = "block ";
         checkQuestion1();
     }
     
@@ -466,18 +491,18 @@
     var fakeWebsitesModal = document.getElementById('fakeWebsitesModal');
 
     // Get the button that opens the email modal
-    var fakeWebsitesBtn = document.getElementById("fakeWebsitesBtn");
+    var fakeWebsitesBtn = document.getElementById("fakeWebsitesBtn ");
 
     // When the user clicks on the button, open the modal 
     fakeWebsitesBtn.onclick = function() {
-        fakeWebsitesModal.style.display = "block";
+        fakeWebsitesModal.style.display = "block ";
         checkQuestion2();
     }
 
-    var fakeWebsitesCloseBtn = document.getElementById("fakeWebsite-close-button");
+    var fakeWebsitesCloseBtn = document.getElementById("fakeWebsite-close-button ");
 
     fakeWebsitesCloseBtn.onclick = function() {
-        fakeWebsitesModal.style.display = "none";
+        fakeWebsitesModal.style.display = "none ";
     }
     
     </script>
